@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Course Launch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>New Course Launch !!!</h1>
+  </header>
+  <div class="container">
+    <div class="intro">
+      <h2>Welcome to Our Exciting New Course!</h2>
+      <p>Join us on an incredible journey of learning and growth.</p>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <h3>Comprehensive Content</h3>
+        <p>Engage with rich and comprehensive course materials.</p>
+      </div>
+      <div class="feature">
+        <h3>Expert Instructors</h3>
+        <p>Learn from industry experts with years of experience.</p>
+      </div>
+      <div class="feature">
+        <h3>Interactive Learning</h3>
+        <p>Participate in interactive sessions and discussions.</p>
+      </div>
+    </div>
+
+    <div class="slideshow-container">
+      <div class="mySlides">
+        <img src="../Images/webdev.jpg" alt="Slide 1" class="slideshow-img">
+      </div>
+      <div class="mySlides">
+        <img src="../Images/android1.png" alt="Slide 2" class="slideshow-img">
+      </div>
+      <div class="mySlides">
+        <img src="../Images/data_science.jpg" alt="Slide 3" class="slideshow-img">
+      </div>
+
+      <div style="text-align: center; margin-top: 20px;">
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <div class="animated-text">
+      <p>Don't miss out on this <span class="text-animation">opportunity!</span></p>
+    </div>
+
+    <div class="responsive-links">
+      <a href="./AboutUs/AboutUs.html">Learn More</a>
+      <a href="./Courses/course.html">Explore Courses</a>
+    </div>
+
+    <div class="cta">
+      <p>Enroll now and take the first step towards your success!</p>
+      <a href="../Home/SignUp/signup.html">Enroll Now</a>
+    </div>
+  </div>
+
+  <script>
+    let slideIndex = 0;
+
+    function showSlides() {
+      let i;
+      const slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000);
+    }
+
+    showSlides();
+  </script>
+</body>
+
+</html>

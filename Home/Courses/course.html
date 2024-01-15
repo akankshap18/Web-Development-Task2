@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="stylesheet" href="course.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <h1>
+                <a href="../landingpage.html" class="previous">&#8249;&#8249;</a>
+            </h1>
+            <h1>Online Course Portal</h1>
+        </div>
+    </header>
+    <div class="course-container">
+        <div class="filter-bar">
+            <label for="category-filter">Filter by Category:</label>
+            <select id="category-filter">
+                <option value="all">All</option>
+                <option value="webdev">Web Development</option>
+                <option value="androidev">Android Development</option>
+                <option value="datascience">Data Science</option>
+            </select>
+        </div>
+
+        <div class="course-list">
+            <div class="course-card" data-category="webdev">
+                <div class="course-title">Introduction to Web Development</div>
+                <div class="course-category">Website</div>
+                <img src="../../Images/Web-Design.jpg" alt="Web Development Course">
+                <p>
+                    Learn the fundamentals of web development, including HTML, CSS, and JavaScript. Build your first
+                    website and get hands-on experience with real-world projects.
+                </p>
+                <p><strong>Duration:</strong> 6 weeks</p>
+                <p><strong>Price:</strong> $99.99</p>
+                <div class="responsive-links">
+                    <a href="../SignUp/signup.html">Enroll Now</a>
+                </div>
+            </div>
+            <div class="course-card" data-category="androidev">
+                <div class="course-title">Introduction to Android Development</div>
+                <div class="course-category">Mobile Application</div>
+                <img src="../../Images/android.jpg" alt="Android App Development Course">
+                <p>
+                    Learn Android App Development with Android 7 Nougat by building real apps including Uber, Whatsapp
+                    and Instagram!
+                </p>
+                <p><strong>Duration:</strong> 8 weeks</p>
+                <p><strong>Price:</strong> $129.99</p>
+                <div class="responsive-links">
+                    <a href="../SignUp/signup.html">Enroll Now</a>
+                </div>
+            </div>
+            <div class="course-card" data-category="datascience">
+                <div class="course-title">Introduction Data Science</div>
+                <div class="course-category">Data Science</div>
+                <img src="../../Images/data-science.jpg" alt="Data Science Course">
+                <p>
+                    Dive into the world of data science. Learn data analysis, machine learning, and statistical
+                    modeling. Apply your skills to solve real-world data problems.
+                </p>
+                <p><strong>Duration:</strong> 8 weeks</p>
+                <p><strong>Price:</strong> $129.99</p>
+                <div class="responsive-links">
+                    <a href="../SignUp/signup.html">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('category-filter').addEventListener('change', function () {
+            var selectedCategory = this.value;
+            var courseCards = document.querySelectorAll('.course-card');
+
+            courseCards.forEach(function (card) {
+                var cardCategory = card.getAttribute('data-category');
+
+                if (selectedCategory === 'all' || selectedCategory === cardCategory) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
